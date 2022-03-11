@@ -2,7 +2,9 @@ from requests import Request, Session
 import json
 import pprint
 import pandas as pd
+from IPython.display import display
 
+pd.set_option("display.max_columns", None)
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
 bitcoin_real = {
     'slug':'bitcoin',
@@ -41,8 +43,16 @@ btc_dolar = json.loads(response_btc_doll.text)
 # ----------------------------------------------------
 # começo pandas
 
-btc_real_df = pd.DataFrame(btc_real)  #Criando dataframe/Tabela
-print(btc_real_df)
+#pprint.pprint(btc_real)
+
+#btc_real_df = pd.DataFrame(btc_real)  #Criando dataframe/Tabela
+btc_real_df = pd.json_normalize(btc_real)
+display(btc_real_df)
+btc_real_df = btc_real_df[['data','1','quote','BRL','price']]
+#pprint.pprint(btc_real_df)  # mostrando dados da tabela
+#print(btc_real_df.head())  # mostra os primeiros dados da tabela
+#print(btc_real_df.shape)   # mostra número de linhas e colunas da tabela
+#print(btc_real_df.describe())
 
 
 

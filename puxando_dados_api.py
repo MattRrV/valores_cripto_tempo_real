@@ -1,6 +1,7 @@
 from requests import Request, Session
 import json
 import pprint
+import pandas as pd
 
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
 bitcoin_real = {
@@ -28,8 +29,42 @@ response_btc_doll = session.get(url, params=bitcoin_dolar)
 btc_dolar = json.loads(response_btc_doll.text)
 
 #pprint.pprint(data)
-pprint.pprint(f"Data de pesquisa: {str(btc_real['data']['1']['quote']['BRL']['last_updated'])}")
-pprint.pprint(f"Valor Bitcoin em real: {btc_real['data']['1']['quote']['BRL']['price']}")
-print("\n")
-pprint.pprint((f"Valor Bitcoin em Dollar {btc_dolar['data']['1']['quote']['USD']['price']}"))
+#pprint.pprint(f"Data de pesquisa: {str(btc_real['data']['1']['quote']['BRL']['last_updated'])}")
+#pprint.pprint(f"Valor Bitcoin em real: {btc_real['data']['1']['quote']['BRL']['price']}")
+#print("\n")
+#pprint.pprint((f"Valor Bitcoin em Dollar {btc_dolar['data']['1']['quote']['USD']['price']}"))
+#Final API
+# ----------------------------------------------------
+
+#pprint.pprint(btc_dolar)
+
+# ----------------------------------------------------
+# começo pandas
+
+btc_real_df = pd.DataFrame(btc_real)  #Criando dataframe/Tabela
+print(btc_real_df)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

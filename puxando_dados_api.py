@@ -3,6 +3,7 @@ import json
 import pprint
 import pandas as pd
 from IPython.display import display
+# ---------------------------------- Importação das bibliotecas
 
 pd.set_option("display.max_columns", None)
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
@@ -29,6 +30,7 @@ btc_real = json.loads(response_btc_real.text)
 
 response_btc_doll = session.get(url, params=bitcoin_dolar)
 btc_dolar = json.loads(response_btc_doll.text)
+# -------------------------------------------- Conexão com API
 
 #pprint.pprint(data)
 #pprint.pprint(f"Data de pesquisa: {str(btc_real['data']['1']['quote']['BRL']['last_updated'])}")
@@ -47,9 +49,10 @@ btc_dolar = json.loads(response_btc_doll.text)
 
 #btc_real_df = pd.DataFrame(btc_real)  #Criando dataframe/Tabela
 btc_real_df = pd.json_normalize(btc_real)
-display(btc_real_df)
-btc_real_df = btc_real_df[['data','1','quote','BRL','price']]
-#pprint.pprint(btc_real_df)  # mostrando dados da tabela
+#pprint.pprint(btc_real_df.info())
+#btc_real_df = btc_real_df[['data','1','quote','BRL','price']]
+btc_real_df = btc_real_df['data.1.quote.BRL.price']
+pprint.pprint(btc_real_df)  # mostrando dados da tabela
 #print(btc_real_df.head())  # mostra os primeiros dados da tabela
 #print(btc_real_df.shape)   # mostra número de linhas e colunas da tabela
 #print(btc_real_df.describe())

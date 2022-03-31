@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e5227f1-0c00-4313-b387-59f11ca1f5a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TRprojeto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aluguel.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projeto_transfero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dados_cripto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dados_cripto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puxando_dados_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/puxando_dados_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/api_cripto-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/api_cripto-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_cripto.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/api_cripto.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
